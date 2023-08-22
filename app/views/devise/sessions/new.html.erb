@@ -6,7 +6,8 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "username" }%>
-    <%= f.input :role,
+    <%= f.label :role %>
+    <%= f.select :role, User::ROLE,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "role" }%>
