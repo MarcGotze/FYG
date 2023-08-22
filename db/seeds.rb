@@ -38,3 +38,34 @@ end
 puts "==========================================="
 puts "Completed !"
 puts "==========================================="
+
+Booking.destroy_all
+puts "==========================================="
+puts "Creating bookings..."
+puts "==========================================="
+
+users = User.all
+venues = Venue.all
+
+start_date_range = Date.today..(Date.today + 30.days)
+end_date_range = start_date_range.to_a.sample(1)
+
+venues.each do |venue|
+  users.sample(2).each do |user|
+    end_date_range.each do |end_date|
+      start_date = rand(start_date_range.begin..(end_date - 1.day))
+      new_booking = Booking.new(
+        user: user,
+        venue: venue,
+        start_date: start_date,
+        end_date: end_date
+      )
+      puts "Booking by #{user.username} for #{venue.name} from #{start_date} to #{end_date}"
+      new_booking.save!
+    end
+  end
+end
+
+puts "==========================================="
+puts "Completed !"
+puts "==========================================="
