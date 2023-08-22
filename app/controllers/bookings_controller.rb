@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     if @booking.destroy
-      redirect_to venues_path, status: :see_other
+      redirect_to user_venues_path, status: :see_other
     else
       puts 'destruction failed'
     end
