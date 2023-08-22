@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
   before_action :authenticate_user!, except: :index
+  # WIP
 
   def index
     @venues = Venue.all
@@ -33,6 +34,7 @@ class VenuesController < ApplicationController
       redirect_to user_venue_path(@venue)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
