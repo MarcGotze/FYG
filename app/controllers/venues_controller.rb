@@ -8,10 +8,13 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    # @user = current_user
   end
 
   def new
     @venue = Venue.new
+    # @user = User.find(params[:id])
+    # @user = current_user
   end
 
   def create
@@ -46,6 +49,6 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :overview, :photo)
+    params.require(:venue).permit(:name, :address, :overview, :user_id, :photo, :current_user)
   end
 end
