@@ -33,6 +33,7 @@ class VenuesController < ApplicationController
       redirect_to user_venue_path(@venue)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
