@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Venue.destroy_all
+puts "Creating venues..."
+puts "==========================================="
+10.times do
+  new_venue = Venue.new(
+    name: Faker::Company.name,
+    address: Faker::Address.street_address,
+    overview: Faker::Lorem.paragraph
+  )
+  puts new_venue.name
+  new_venue.save!
+end
+puts "==========================================="
+puts "Completed !"
