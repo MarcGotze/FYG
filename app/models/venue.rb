@@ -1,5 +1,5 @@
 class Venue < ApplicationRecord
-  belongs_to :users
+  belongs_to :user
   has_many :bookings
-  validates :overwiew, :name, :address, presence: true
+  validates :overview, :name, :address, presence: true
 end
