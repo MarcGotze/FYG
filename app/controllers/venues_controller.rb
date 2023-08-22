@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
   before_action :authenticate_user!, except: :index
+  # WIP
 
   def index
     @venues = Venue.all
