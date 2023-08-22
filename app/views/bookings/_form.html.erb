@@ -1,6 +1,6 @@
 <%= simple_form_for [@venue, @booking] do |f| %>
   <%= f.input :start_date %>
-  <%= f.input :start_date %>
+  <%= f.input :end_date %>
   <%# <%= f.association :venue %>
   <%= f.submit "Book this gig", class: "btn btn-outline-info" %>
 <% end %>
