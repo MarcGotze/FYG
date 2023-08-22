@@ -1,0 +1,4 @@
+  <h1 class="text-center">Single page venue: <%= @venue.name%></h1>
+  <%# <%= console %>
+
+  <button class="btn btn-outline-info mb-5"><%= link_to "📍 Book!", new_user_venue_booking_path(current_user, @venue) %></button>

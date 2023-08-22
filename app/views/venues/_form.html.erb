@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for [@venue] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :overview %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Register my venue" %>
+  <% end %>
+</div>

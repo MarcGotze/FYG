@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     if @booking.destroy
-      redirect_to venues_path, status: :see_other
+      redirect_to user_venues_path, status: :see_other
     else
       puts 'destruction failed'
     end
@@ -33,10 +33,10 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :venue_id)
+    params.require(:booking).permit(:start_date, :end_date, :venue_id, :user_id)
   end
 
   def set_booking
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:venue_id])
   end
 end
