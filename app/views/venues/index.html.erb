@@ -1,10 +1,7 @@
 <div class="container">
   <div class="cards">
     <% @venues.each do |venue| %>
-    <div class="card-category"
-    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <%= venue.name %>
-    </div>
+    <%= render "shared/card", venue: venue %>
     <% end %>
   </div>
 </div>
