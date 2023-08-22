@@ -1,12 +1,9 @@
 <div class="container">
   <div class="cards">
     <% @venues.each do |venue| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-      <% if member_signed_in? %>
-        <%= link_to venue.name, user_venue_path(venue) %>
-      <% else %>
+    <div class="card-category"
+    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <%= venue.name %>
-      <% end %>
     </div>
     <% end %>
   </div>
