@@ -16,7 +16,11 @@ class VenuesController < ApplicationController
   def create
     @venue = Venue.new(venue_params)
     @venue.save
-    redirect_to user_venue_path(@venue)
+    if @venue.save
+      redirect_to user_venues_path(@venue)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -25,8 +29,10 @@ class VenuesController < ApplicationController
 
   def update
     @venue = Venue.find(params[:id])
-    @venue.update(venue_params)
-    redirect_to user_venue_path(@venue)
+    if @venue.update(venue_params)
+      redirect_to user_venue_path(@venue)
+    else
+      render :new, status: :unprocessable_entity
   end
 
   def destroy
