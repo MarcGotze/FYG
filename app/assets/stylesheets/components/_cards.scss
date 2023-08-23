@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 .cards {
   display: grid;
@@ -37,8 +38,9 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
+  height: 87.2px;
 }
 
 .card-trip-infos .card-trip-user {
@@ -46,4 +48,26 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.description {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.title {
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
 }
