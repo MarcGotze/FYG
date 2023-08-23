@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     @booking = Booking.new(booking_params)
     @booking.venue = @venue
+    raise
     # TODO: @booking is undefined, render nill
     if @booking.save
       redirect_to history_user_venue_bookings_path(@booking), notice: "booking successfully created"
