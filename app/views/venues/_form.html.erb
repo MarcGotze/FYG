@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for [@venue] do |f| %>
+  <%= simple_form_for [current_user, @venue] do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :overview %>
