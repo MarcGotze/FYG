@@ -2,3 +2,6 @@
   <%# <%= console %>
 
   <button class="btn btn-outline-info mb-5"><%= link_to "📍 Book!", new_user_venue_booking_path(current_user, @venue) %></button>
+  <button class="btn btn-success"><%= link_to "Edit", edit_user_venue_path(current_user) %></button>
+  <button class="btn btn-success"><%= link_to "Delete", user_venue_path(current_user) %></button>
+<%# TODO: change path for EDIT and DELETE %>

@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @venue = Venue.find(params[:venue_id])
     @booking = Booking.new(booking_params)
     @booking.venue = @venue
+    # TODO: @booking is undefined, render nill
     if @booking.save
       redirect_to history_user_venue_bookings_path(@booking), notice: "booking successfully created"
     else
@@ -33,7 +34,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :venue_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :venue_id, :user_id, :id)
   end
 
   def set_booking

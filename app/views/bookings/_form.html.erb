@@ -1,5 +1,6 @@
-<%= simple_form_for [@venue, @booking] do |f| %>
+<%= simple_form_for [current_user, @venue, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit "Book this gig", class: "btn btn-outline-info" %>
 <% end %>
+<%# TODO: Add Flatpickr %>
