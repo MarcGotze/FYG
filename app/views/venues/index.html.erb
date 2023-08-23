@@ -1,6 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=asset_path("banner.jpg")%>)";>
   <div class="container text-center">
-    <h1>Find Your Gig</h1>
+    <h1 class="mb-6">Find Your Gig</h1>
+    <% if user_signed_in? %>
+      <button class="btn btn-warning mb-5 mt-6"><%= link_to "Add my venue", new_user_venue_path(current_user) %></button>
+    <% end %>
   </div>
 </div>
 <div class="container">
@@ -9,7 +12,4 @@
       <%= render "shared/card", venue: venue %>
     <% end %>
   </div>
-  <% if user_signed_in? %>
-    <button class="btn btn-success"><%= link_to "Add a venue", new_user_venue_path(current_user) %></button>
-  <% end %>
 </div>

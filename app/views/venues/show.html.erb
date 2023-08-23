@@ -1,4 +1,4 @@
-  <h1 class="text-center">Single page venue: <%= @venue.name%></h1>
+  <h1 class="text-center"><%= @venue.name%></h1>
   <%# <%= console %>
 
 <div class="container">
@@ -6,10 +6,11 @@
       <h3><%= @venue.name %></h3>
       <p><%= @venue.address %></p>
       <p><%= @venue.overview %></p>
-  <% if user_signed_in? && current_user.role = "owner"%>
-    <button class="btn btn-success"><%= link_to "Edit", edit_user_venue_path(current_user) %></button>
-    <button class="btn btn-success"><%= link_to "Delete", "/users/#{current_user.id}/venues/#{@venue.id}" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+  <% if user_signed_in? && current_user.role == "owner"%>
+    <button class="btn btn-warning mb-5"><%= link_to "Edit", edit_user_venue_path(current_user) %></button>
+    <button class="btn btn-warning mb-5"><%= link_to "Delete", "/users/#{current_user.id}/venues/#{@venue.id}" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
   <% end %>
-  <button class="btn btn-outline-info mb-5"><%= link_to "📍 Book!", new_user_venue_booking_path(current_user, @venue) %></button>
-<%# TODO: change path DELETE %>
+  <div class="btn-container">
+    <button class="btn btn-warning mb-5"><%= link_to "Book!", new_user_venue_booking_path(current_user, @venue) %></button>
+  </div>
   </div>
