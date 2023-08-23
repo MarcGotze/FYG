@@ -71,9 +71,9 @@ venue.save
 
 cco = URI.open("https://www.lyoncapitale.fr/wp-content/uploads/2014/05/449646-ez-Le-CCO-Jean-Pierre-Lachaize.png")
 venue = Venue.new(
-  name: "Le Marché Gare",
-  address: "4-6 Pl. Hubert Mounier, 69002 Lyon",
-  overview: "Salle de 300 places ouverte en 2007 accueillant des concerts de punk, disco, hip-hop et rap.",
+  name: "Le CCO",
+  address: "39 Rue Georges Courteline, 69100 Villeurbanne",
+  overview: "Le Centre culturel œcuménique Jean-Pierre-Lachaize ou CCO Villeurbanne et localement connu comme Le CCO, est un centre culturel créé en 1963 à Villeurbanne à proximité du campus universitaire de La Doua. Il a été nommé en l'honneur de Jean Pierre-Lachaize, un directeur qui fut investi dans la vie du centre.",
   user_id: random_user.id
 )
 venue.photo.attach(io: cco, filename: "449646-ez-Le-CCO-Jean-Pierre-Lachaize.png", content_type: "image/png")
