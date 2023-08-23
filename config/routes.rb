@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create edit update destroy] do
     resources :venues, except: %i[index show] do
       resources :bookings, only: %i[new create destroy] do
+        # delete '/venue/:id', to: 'venues#destroy', as: 'delete_venue'
         collection do
           get :history
         end

@@ -13,17 +13,16 @@ class VenuesController < ApplicationController
 
   def new
     @venue = Venue.new
-    # @user = User.find(params[:id])
-    # @user = current_user
   end
 
   def create
     @venue = Venue.new(venue_params)
+    @venue.user_id = current_user.id
     @venue.save
     if @venue.save
-      redirect_to user_venues_path(@venue)
+      redirect_to venue_path(@venue)
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: "booking successfully created"
     end
   end
 
@@ -34,7 +33,7 @@ class VenuesController < ApplicationController
   def update
     @venue = Venue.find(params[:id])
     if @venue.update(venue_params)
-      redirect_to user_venue_path(@venue)
+      redirect_to venue_path(@venue)
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,8 +41,12 @@ class VenuesController < ApplicationController
 
   def destroy
     @venue = Venue.find(params[:id])
-    @venue.destroy
-    redirect_to user_venues_path
+    @venue.user_id = current_user.id
+    if @venue.destroy
+      redirect_to root_path, status: :see_other, notice: "venue deleted"
+    else
+      puts 'destruction failed'
+    end
   end
 
   private
