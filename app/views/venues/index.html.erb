@@ -9,5 +9,7 @@
       <%= render "shared/card", venue: venue %>
     <% end %>
   </div>
-  <button class="btn btn-success"><%= link_to "Add a venue", new_user_venue_path(current_user) %></button>
+  <% if user_signed_in? %>
+    <button class="btn btn-success"><%= link_to "Add a venue", new_user_venue_path(current_user) %></button>
+  <% end %>
 </div>
