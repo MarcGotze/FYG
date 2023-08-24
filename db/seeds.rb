@@ -137,7 +137,6 @@ venue = Venue.new(
 venue.photo.attach(io: radiant_bellevue, filename: "2218_1.jpg")
 venue.save
 puts venue.name
-
 # end
 puts "==========================================="
 puts "Creating bookings..."
