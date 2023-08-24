@@ -5,4 +5,10 @@
       <p><%= booking.start_date %></p>
       <p><%= booking.end_date %></p>
     <% end %>
+  <h1 class="text-center">My bookings owned</h1>
+    <% @bookings_owned.each do |booking| %>
+      <h3><%= booking.venue.name %></h3>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+    <% end %>
 </div>
