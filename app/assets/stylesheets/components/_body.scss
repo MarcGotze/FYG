@@ -14,9 +14,5 @@ body {
   display: flex;
   flex-direction: row-reverse;
   overflow-x: hidden;
-}
-
-.map {
-  position: sticky;
-  top: 0;
+  height: 100vh;
 }
