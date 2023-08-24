@@ -43,7 +43,7 @@ transbo = URI.open("https://www.heurebleue.fr/wp-content/files_dnk/cache/7e6f4bb
 venue = Venue.new(
   name: "le Transbordeur",
   address: "3 Bd de Stalingrad, 69100 Villeurbanne",
-  overview: "Le Transbordeur est une salle de concert consacrée aux musiques actuelles située à Villeurbanne, à proximité du Parc de la Tête d'Or et de la Cité Internationale.",
+  overview: "Le Transbordeur is a concert venue dedicated to contemporary music located in Villeurbanne, near the Parc de la Tête d'Or and the Cité Internationale.",
   user_id: random_user.id
 )
 venue.photo.attach(io: transbo, filename: "7e6f4bb05446b6935b7583c8132db6e1_transbordeur_salle_lyon.jpg", content_type: "image/jpg")
@@ -54,8 +54,7 @@ kao = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Ninkas
 venue = Venue.new(
   name: "Ninkasi KAO",
   address: "267 Rue Marcel Mérieux, 69007 Lyon",
-  overview: "Le Ninkasi Gerland, avec deux scènes de musiques actuelles, le Kafé et le Kao, est une des salles de concert emblématiques de lyon.
-  Des concerts (pop, rock, électro, chanson..), soirées Djs, étudiantes ou d’entreprise y sont organisés toute l’année. Pour consulter le listing complet des concerts et des soirées, c’est par ici que ca se passe.",
+  overview: "Ninkasi Gerland, with two stages for contemporary music, the Kafé and the Kao, is one of Lyon's iconic concert venues. Concerts (pop, rock, electronic, chanson, etc.), DJ nights, student gatherings, and corporate events are organized there throughout the year. To check out the complete list of concerts and events, this is where you need to go.",
   user_id: random_user.id
 )
 venue.photo.attach(io: kao, filename: "1280px-Ninkasi_kao_Lyon7_fr.JPG", content_type: "image/jpg")
@@ -66,7 +65,7 @@ marche_gare = URI.open("https://cdn-s-www.leprogres.fr/images/A1A690DE-08E4-4821
 venue = Venue.new(
   name: "Le Marché Gare",
   address: "4-6 Pl. Hubert Mounier, 69002 Lyon",
-  overview: "Salle de 300 places ouverte en 2007 accueillant des concerts de punk, disco, hip-hop et rap.",
+  overview: "A 300-capacity venue opened in 2007, hosting punk, disco, hip-hop, and rap concerts.",
   user_id: random_user.id
 )
 venue.photo.attach(io: marche_gare, filename: "le-portail-emblematique-du-marche-gare-transforme-en-salle-de-spectacle-reste-le-temoin-d-un-demi-siecle-de-marche-de-gros-photo-charles-yves-guyon-1488206087.jpg", content_type: "image/jpg")
@@ -77,7 +76,7 @@ cco = URI.open("https://www.lyoncapitale.fr/wp-content/uploads/2014/05/449646-ez
 venue = Venue.new(
   name: "Le CCO",
   address: "39 Rue Georges Courteline, 69100 Villeurbanne",
-  overview: "Le Centre culturel œcuménique Jean-Pierre-Lachaize ou CCO Villeurbanne et localement connu comme Le CCO, est un centre culturel créé en 1963 à Villeurbanne à proximité du campus universitaire de La Doua. Il a été nommé en l'honneur de Jean Pierre-Lachaize, un directeur qui fut investi dans la vie du centre.",
+  overview: "Le CCO is a cultural center established in 1963 in Villeurbanne, near the La Doua university campus. It was named in honor of Jean Pierre-Lachaize, a director who was deeply involved in the center's activities.",
   user_id: random_user.id
 )
 venue.photo.attach(io: cco, filename: "449646-ez-Le-CCO-Jean-Pierre-Lachaize.png", content_type: "image/png")
@@ -88,7 +87,7 @@ trokson = URI.open("https://upload.wikimedia.org/wikipedia/commons/0/0d/Le_Troks
 venue = Venue.new(
   name: "Le Trokson",
   address: "110 Mnt de la Grande-Côte, 69001 Lyon",
-  overview: "Des groupes de rock se produisent sur la petite scène de ce bar à cocktails branché doté d'une grande cour extérieure.",
+  overview: "Rock bands perform on the small stage of this trendy cocktail bar with a spacious outdoor courtyard.",
   user_id: random_user.id
 )
 venue.photo.attach(io: trokson, filename: "Le_Trokson%2C_Mont%C3%A9e_de_la_Grande_C%C3%B4te_%C3%A0_Lyon.JPG", content_type: "image/jpg")
@@ -99,7 +98,7 @@ kraspek = URI.open("https://www.petit-bulletin.fr/multimedia/articles/170110_...
 venue = Venue.new(
   name: "Le Kraspek Myzik",
   address: "20 Mnt Saint-Sébastien, 69001 Lyon",
-  overview: "Scène underground lyonnaise dédiée à la création et la diffusion des musiques actuelles & indépendantes.",
+  overview: "An underground scene in Lyon dedicated to the creation and promotion of contemporary and independent music",
   user_id: random_user.id
 )
 venue.photo.attach(io: kraspek, filename: "170110_....multimediaarticles170109Krafacade.jpg")
