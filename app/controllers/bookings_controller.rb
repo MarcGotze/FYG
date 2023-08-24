@@ -11,10 +11,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.venue = @venue
     @booking.user_id = current_user.id
-    # @booking.user_id = current_user
-    # TODO: @booking is undefined, render nill
     if @booking.save
-      redirect_to history_user_venue_bookings_path(current_user, @venue), notice: "booking successfully created"
+      redirect_to user_my_bookings_path(current_user), notice: "booking successfully created"
     else
       render :new, status: :unprocessable_entity
     end
