@@ -9,6 +9,7 @@ require "open-uri"
 
 User.destroy_all
 Venue.destroy_all
+Booking.destroy_all
 puts "==========================================="
 puts "Creating users..."
 puts "==========================================="
@@ -47,6 +48,7 @@ venue = Venue.new(
 )
 venue.photo.attach(io: transbo, filename: "7e6f4bb05446b6935b7583c8132db6e1_transbordeur_salle_lyon.jpg", content_type: "image/jpg")
 venue.save
+puts venue.name
 
 kao = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Ninkasi_kao_Lyon7_fr.JPG/1280px-Ninkasi_kao_Lyon7_fr.JPG")
 venue = Venue.new(
@@ -57,6 +59,7 @@ venue = Venue.new(
 )
 venue.photo.attach(io: kao, filename: "1280px-Ninkasi_kao_Lyon7_fr.JPG", content_type: "image/jpg")
 venue.save
+puts venue.name
 
 marche_gare = URI.open("https://cdn-s-www.leprogres.fr/images/A1A690DE-08E4-4821-827E-360124B3DCF9/NW_raw/le-portail-emblematique-du-marche-gare-transforme-en-salle-de-spectacle-reste-le-temoin-d-un-demi-siecle-de-marche-de-gros-photo-charles-yves-guyon-1488206087.jpg")
 venue = Venue.new(
@@ -67,6 +70,7 @@ venue = Venue.new(
 )
 venue.photo.attach(io: marche_gare, filename: "le-portail-emblematique-du-marche-gare-transforme-en-salle-de-spectacle-reste-le-temoin-d-un-demi-siecle-de-marche-de-gros-photo-charles-yves-guyon-1488206087.jpg", content_type: "image/jpg")
 venue.save
+puts venue.name
 
 cco = URI.open("https://www.lyoncapitale.fr/wp-content/uploads/2014/05/449646-ez-Le-CCO-Jean-Pierre-Lachaize.png")
 venue = Venue.new(
@@ -77,6 +81,7 @@ venue = Venue.new(
 )
 venue.photo.attach(io: cco, filename: "449646-ez-Le-CCO-Jean-Pierre-Lachaize.png", content_type: "image/png")
 venue.save
+puts venue.name
 
 trokson = URI.open("https://upload.wikimedia.org/wikipedia/commons/0/0d/Le_Trokson%2C_Mont%C3%A9e_de_la_Grande_C%C3%B4te_%C3%A0_Lyon.JPG")
 venue = Venue.new(
@@ -87,6 +92,7 @@ venue = Venue.new(
 )
 venue.photo.attach(io: trokson, filename: "Le_Trokson%2C_Mont%C3%A9e_de_la_Grande_C%C3%B4te_%C3%A0_Lyon.JPG", content_type: "image/jpg")
 venue.save
+puts venue.name
 
 kraspek = URI.open("https://www.petit-bulletin.fr/multimedia/articles/170110_....multimediaarticles170109Krafacade.jpg")
 venue = Venue.new(
@@ -97,12 +103,42 @@ venue = Venue.new(
 )
 venue.photo.attach(io: kraspek, filename: "170110_....multimediaarticles170109Krafacade.jpg")
 venue.save
-# end
-puts "==========================================="
-puts "Completed !"
-puts "==========================================="
+puts venue.name
 
-Booking.destroy_all
+farmer = URI.open("https://www.nightfallcards.fr/wp-content/uploads/2020/01/farmer-2.jpg")
+venue = Venue.new(
+  name: "Le Farmer",
+  address: "14 Mnt des Carmélites, 69001 Lyon",
+  overview: "Rock concert venue in Lyon.",
+  user_id: random_user.id
+)
+venue.photo.attach(io: farmer, filename: "farmer-2.jpg")
+venue.save
+puts venue.name
+
+grrrnd_zero = URI.open("https://www.rue89lyon.fr/wp-content/uploads/2019/06/IMG_0035.jpg")
+venue = Venue.new(
+  name: "Grrrnd Zero",
+  address: "60 Av. de Bohlen, 69120 Vaulx-en-Velin",
+  overview: "Independent concert venue and association in Lyon / Vaulx-en-Velin for concerts, events, and hosting of associations and artists.",
+  user_id: random_user.id
+)
+venue.photo.attach(io: grrrnd_zero, filename: "IMG_0035.jpg")
+venue.save
+puts venue.name
+
+radiant_bellevue = URI.open("https://www.oubruncher.com/photos1/2218_1.jpg")
+venue = Venue.new(
+  name: "Radiant Bellevue",
+  address: "1 Rue Jean Moulin, 69300 Caluire-et-Cuire",
+  overview: "The Radiant-Bellevue is a cultural complex in the city of Caluire-et-Cuire in the Lyon metropolis",
+  user_id: random_user.id
+)
+venue.photo.attach(io: radiant_bellevue, filename: "2218_1.jpg")
+venue.save
+puts venue.name
+
+# end
 puts "==========================================="
 puts "Creating bookings..."
 puts "==========================================="
