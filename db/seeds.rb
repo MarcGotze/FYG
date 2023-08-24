@@ -86,7 +86,7 @@ puts venue.name
 trokson = URI.open("https://upload.wikimedia.org/wikipedia/commons/0/0d/Le_Trokson%2C_Mont%C3%A9e_de_la_Grande_C%C3%B4te_%C3%A0_Lyon.JPG")
 venue = Venue.new(
   name: "Le Trokson",
-  address: "110 Mnt de la Grande-Côte, 69001 Lyon",
+  address: "110 Montée de la Grande-Côte, 69001 Lyon",
   overview: "Rock bands perform on the small stage of this trendy cocktail bar with a spacious outdoor courtyard.",
   user_id: random_user.id
 )
@@ -97,7 +97,7 @@ puts venue.name
 kraspek = URI.open("https://www.petit-bulletin.fr/multimedia/articles/170110_....multimediaarticles170109Krafacade.jpg")
 venue = Venue.new(
   name: "Le Kraspek Myzik",
-  address: "20 Mnt Saint-Sébastien, 69001 Lyon",
+  address: "20 Montée Saint-Sébastien, 69001 Lyon",
   overview: "An underground scene in Lyon dedicated to the creation and promotion of contemporary and independent music",
   user_id: random_user.id
 )
@@ -108,7 +108,7 @@ puts venue.name
 farmer = URI.open("https://www.nightfallcards.fr/wp-content/uploads/2020/01/farmer-2.jpg")
 venue = Venue.new(
   name: "Le Farmer",
-  address: "14 Mnt des Carmélites, 69001 Lyon",
+  address: "14 Montée des Carmélites, 69001 Lyon",
   overview: "Rock concert venue in Lyon.",
   user_id: random_user.id
 )
