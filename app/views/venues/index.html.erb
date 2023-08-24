@@ -2,7 +2,7 @@
   <div class="container text-center">
     <h1 class="mb-6">Find Your Gig</h1>
     <% if user_signed_in? %>
-      <button class="btn btn-warning mb-5 mt-6"><%= link_to "Add my venue", new_user_venue_path(current_user) %></button>
+      <%= link_to "Add my venue", new_user_venue_path(current_user), class: "btn btn-warning mb-5 mt-6" %>
     <% end %>
   </div>
 </div>
