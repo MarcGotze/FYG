@@ -4,6 +4,14 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        venues.name ILIKE :query
+        OR venues.overview ILIKE :query
+        OR venues.address ILIKE :query
+      SQL
+      @venues = @venues.where(sql_subquery, query: "%#{params[:query]}%")
+    end
     @markers = @venues.geocoded.map do |venue|
       {
         lat: venue.latitude,
