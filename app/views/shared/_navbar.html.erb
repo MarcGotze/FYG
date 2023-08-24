@@ -10,15 +10,17 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'My bookings', user_my_bookings_path(current_user),
+                          class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? }" %>
+            </li>
+          <% end %>
           <li class="nav-item">
-            <a class="nav-link" href="/users/:user_id/venues/:venue_id/bookings/history">My bookings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/sign_in">Login</a>
-            <%= link_to "login", new_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? }" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "logout", destroy_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? == false }" %>
+            <%= link_to "Logout", destroy_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? == false }" %>
 
           </li>
           <li class="nav-item dropdown">
