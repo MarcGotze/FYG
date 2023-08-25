@@ -1,13 +1,16 @@
  <div class="show">
+   </div>
   <h2 class="text-center"><%= @venue.name%></h2>
     <div class="container">
-      <div class="card-product">
-        <img src="<%= cl_image_path @venue.photo.key, height: 300, crop: :fit %>" />
-          <div class="card-product-infos">
+      <div class="flex-show">
+        <div class="img-venue">
+          <img src="<%= cl_image_path @venue.photo.key, height: 300, crop: :fit %>" />
+        </div>
+        <div class="description-show">
            <h2><%= @venue.name %></h2>
             <p><%= @venue.address %></p>
             <p><%= @venue.overview %></p>
-          </div>
+        </div>
       </div>
        <% if user_signed_in? && current_user.role == "owner"%>
        <%= link_to "Edit", edit_user_venue_path(current_user), class: "btn btn-warning mb-5" %>
@@ -17,4 +20,3 @@
       <%= link_to "Book!", new_user_venue_booking_path(current_user, @venue), class: "btn btn-warning mb-5" %>
       </div>
      </div>
-   </div>
