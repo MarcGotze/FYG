@@ -19,10 +19,11 @@
             <%= link_to "Logout", destroy_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? == false }" %>
 
           </li>
-          <% end %>
+          <% else %>
             <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? }" %>
             </li>
+          <% end %>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Action</a>

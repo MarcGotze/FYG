@@ -15,12 +15,12 @@
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
       <%= f.label :role %>
-      <div class="form-control">
+      <%# <div class="form-control">
         <%= f.select :role, User::ROLE,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "role" }%>
-      </div>
+      <%# </div> %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 

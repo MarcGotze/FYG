@@ -143,7 +143,7 @@ venues.each do |venue|
     end_date_range.each do |end_date|
       start_date = rand(start_date_range.begin..(end_date - 1.day))
       new_booking = Booking.new(
-        user: user,
+        musician: user,
         venue: venue,
         start_date: start_date,
         end_date: end_date
