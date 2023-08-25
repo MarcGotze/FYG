@@ -25,8 +25,9 @@
             <h2><%= booking.venue.name %></h3>
             <p>From: <%= booking.start_date %></p>
             <p>To: <%= booking.end_date %></p>
-            <div class="card-info-avatar">
-              <p class="user">Booked by: <%= booking.user_id %></p>
+            <div id="card-info-avatar">
+              <div class="user">Line-up: <%= booking.musician.username %> </div>
+              <div><img class="avatar avatar-bordered" src="<%= cl_image_path current_user.avatar.key, height: 50, crop: :fit %>" alt=""></div>
               <%= console %>
             </div>
           </div>
