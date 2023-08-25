@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
   def history
     @bookings = current_user.bookings
-
+    @bookings_owned = Booking.all.select{|b| b.venue.owner ==  current_user}
   end
 
   def destroy

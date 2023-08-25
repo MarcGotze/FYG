@@ -2,7 +2,7 @@
   <div class="container text-center">
     <h1 class="mb-6">Find Your Gig</h1>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center search">
     <div class="col-sm-8 my-3">
       <%= form_with url: venues_path, method: :get, class: "d-flex align-items-center" do %>
         <%= text_field_tag :query,
@@ -20,7 +20,7 @@
 </div>
 
 <div class="flex">
-  <div id="map" style="width: 100%; height: 100vh;"
+  <div id="map" style="width: 80%; height: 100vh;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

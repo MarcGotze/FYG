@@ -14,10 +14,10 @@
                 autofocus: true,
                 input_html: { autocomplete: "username" }%>
     <%= f.label :role %>
-    <%= f.select :role, User::ROLE,
+    <%# <%= f.select :role, User::ROLE,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "role" }%>
+                input_html: { autocomplete: "role" }%> 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
