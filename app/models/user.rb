@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :venues, dependent: :destroy
 
-  validates :email, :password, :username, :avatar, presence: true
+  validates :email, :password, :username, presence: true
   has_one_attached :avatar
 end
