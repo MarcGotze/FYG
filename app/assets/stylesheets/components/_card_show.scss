@@ -1,20 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 .flex-show {
   display: flex;
   width: 90%;
-  margin: 0 auto;
+  margin: 50px auto 0;
   justify-content: center;
-  height: 300px;
+  height: 800px;
 }
 
-.img-venue {
+.img-venue img {
   opacity: 1;
-  width: 300px;
-  border-radius: 10px;
+  width: 440px;
+  border-radius: 5px;
+  height: 40%;
 }
 
 .description-show {
   background-color: #FFF;
-  width: 400px;
-  height: 60%;
+  width: 500px;
+  height: 40%;
   align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.description-show h2 {
+  color: #324A5F;
+  font-weight: 600;
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+.description-show p {
+  line-height: 1.4em;
+  padding-top: 2px;
+}
+
+.description-show h2 > p {
+  font-weight: bold;
+}
+
+.btn-book {
+  width: 100px;
+  height: 10%;
+  bottom: 0;
+}
+
+.flex-button {
+  display: flex;
 }
