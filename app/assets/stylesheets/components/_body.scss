@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 body {
   background-image: url("background.jpg");
 }
 
+//PAGE INDEX
 .content-container {
   margin-top: 70px;
   min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+
+//PAGE SHOW
+.show {
+  width: 90%;
+  margin: 30px auto;
+  height: 360px;
+  background-image: url("show.jpg");
+  border-radius: 5px;
+}
+
+.show .text-center {
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  margin: 30px auto;
+  width: 30%;
+  padding: 14px;
+  border-radius: 5px;
+  text-transform: capitalize;
 }
 
 .flex {

@@ -15,7 +15,7 @@ puts "Creating users..."
 puts "==========================================="
 10.times do
   new_user = User.new(
-    username: Faker::Internet.username,
+    username: Faker::Music::RockBand.name,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     role: User::ROLE.sample
@@ -28,17 +28,7 @@ puts "Creating venues..."
 puts "==========================================="
 users = User.all.to_a
 random_user = users.sample
-  # User.all.each do |user|
-  # 3.times do
-  #   new_venue = Venue.new(
-  #     name: Faker::Company.name,
-  #     address: Faker::Address.street_address,
-  #     overview: Faker::Lorem.paragraph,
-  #     user_id: user.id
-  #   )
-  #   puts new_venue.name
-  #   new_venue.save!
-  # end
+
 transbo = URI.open("https://www.heurebleue.fr/wp-content/files_dnk/cache/7e6f4bb05446b6935b7583c8132db6e1_transbordeur_salle_lyon.jpg")
 venue = Venue.new(
   name: "le Transbordeur",
