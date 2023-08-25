@@ -132,14 +132,69 @@ puts "==========================================="
 puts "Creating bookings..."
 puts "==========================================="
 
-users = User.all
+users_bookings = []
 venues = Venue.all
 
 start_date_range = Date.today..(Date.today + 30.days)
 end_date_range = start_date_range.to_a.sample(1)
 
+led_zep = URI.open("https://discography.ledzeppelin.com/images/cd.jpg")
+user = User.new(
+  username: "Led Zeppelin",
+  email: "ledzep@gmail.com",
+  password: Faker::Internet.password
+)
+user.avatar.attach(io: led_zep, filename: "cd.jpg")
+user.save
+users_bookings << user
+puts user.username
+
+massive_attack = URI.open("https://upload.wikimedia.org/wikipedia/en/e/e9/Massive_Attack_-_Mezzanine.png")
+user = User.new(
+  username: "Massive Attack",
+  email: "massiveattack@gmail.com",
+  password: Faker::Internet.password
+)
+user.avatar.attach(io: massive_attack, filename: "Massive_Attack_-_Mezzanine.png")
+user.save
+users_bookings << user
+puts user.username
+
+guerilla_poubelle = URI.open("https://s9.limitedrun.com/images/1108527/pochetrerepeindre.jpg")
+user = User.new(
+  username: "Guerilla Poubelle",
+  email: "guerillapoubelle@gmail.com",
+  password: Faker::Internet.password
+)
+user.avatar.attach(io: guerilla_poubelle, filename: "pochetrerepeindre.jpg")
+user.save
+users_bookings << user
+puts user.username
+
+gorillaz = URI.open("https://i.discogs.com/wnpGtJ7ohpGvIcIoz6tEaIEEnt6cXvxHW6eSmg9eqeY/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyNzI5/NDUtMTM0OTY5NTU5/MS0zNDE2LmpwZWc.jpeg")
+user = User.new(
+  username: "Gorillaz",
+  email: "gorillaz@gmail.com",
+  password: Faker::Internet.password
+)
+user.avatar.attach(io: gorillaz, filename: "pochetrerepeindre.jpg")
+user.save
+users_bookings << user
+puts user.username
+
+white_stripes = URI.open("https://www.albumrock.net/dyn_img/pochettes_album/168_150.jpg")
+user = User.new(
+  username: "White Stripes",
+  email: "whitestripes@gmail.com",
+  password: Faker::Internet.password
+)
+user.avatar.attach(io: white_stripes, filename: "168_150.jpg")
+user.save
+users_bookings << user
+puts user.username
+
 venues.each do |venue|
-  users.sample(2).each do |user|
+  users_bookings.sample(2).each do |user|
     end_date_range.each do |end_date|
       start_date = rand(start_date_range.begin..(end_date - 1.day))
       new_booking = Booking.new(
