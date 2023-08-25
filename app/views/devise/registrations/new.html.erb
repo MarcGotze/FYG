@@ -5,17 +5,11 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <div class="form-control">
       <%= f.input :username,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "username" }%>
-      <%= f.label :role %>
-      <div class="form-control">
-        <%= f.select :role, User::ROLE,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "role" }%>
-      </div>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -27,6 +21,7 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :avatar, as: :file %>
     </div>
 
     <div class="form-actions btn btn-warning">

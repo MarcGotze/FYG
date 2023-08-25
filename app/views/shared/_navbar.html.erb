@@ -7,31 +7,29 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'My bookings', user_my_bookings_path(current_user), class: "nav-link" %>
           </li>
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to 'My bookings', user_my_bookings_path(current_user),
-                          class: "nav-link" %>
-            </li>
           <li class="nav-item">
             <%= link_to "Logout", destroy_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? == false }" %>
-
           </li>
-          <% end %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? }" %>
-            </li>
-          <li class="nav-item dropdown">
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
+          <li class="nav-item">
+            <img class="avatar avatar-bordered" src="<%= cl_image_path current_user.avatar.key, height: 50, crop: :fit %>" alt="">
           </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
+        <% end %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link #{ 'hidden' if user_signed_in? }" %>
+          </li>
+        <li class="nav-item dropdown">
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+          </div>
+        </li>
+        <!--li class="nav-item"-->
+        <!--/li-->
       </ul>
     </div>
   </div>
