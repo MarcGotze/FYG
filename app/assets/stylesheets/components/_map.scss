@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -11,4 +13,24 @@
   position: sticky;
   top: 0px;
   margin-top: 30px;
+}
+
+
+.modal-contain{
+  font-family: 'Lato', sans-serif;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.modal-h2 {
+  color:#324A5F;
+  font-size: 1.6em;
+  font-weight: 800;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+
+.mapboxgl-popup-close-button {
+  background-color: #324A5F;
+  border: none;
 }
