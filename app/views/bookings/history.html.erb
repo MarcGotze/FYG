@@ -1,28 +1,36 @@
-<div class="container">
+<div class="container" id="container-bookings">
   <br>
   <h1 class="text-center">I will play at</h1>
   <br>
+  <div class="cards-container">
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <img src="<%= cl_image_path booking.venue.photo.key, height: 300, crop: :fit %>" />
         <div class="card-product-infos">
           <h2><%= booking.venue.name %></h3>
-          <p><%= booking.start_date %></p>
-          <p><%= booking.end_date %></p>
+          <p>From: <%= booking.start_date %></p>
+          <p>To: <%= booking.end_date %></p>
         </div>
       </div>
     <% end %>
+  </div>
     <br>
   <h1 class="text-center">My venue's gigs</h1>
   <br>
+  <div class="cards-container">
     <% @bookings_owned.each do |booking| %>
       <div class="card-product">
         <img src="<%= cl_image_path booking.venue.photo.key, height: 300, crop: :fit %>" />
           <div class="card-product-infos">
             <h2><%= booking.venue.name %></h3>
-            <p><%= booking.start_date %></p>
-            <p><%= booking.end_date %></p>
+            <p>From: <%= booking.start_date %></p>
+            <p>To: <%= booking.end_date %></p>
+            <div class="card-info-avatar">
+              <p class="user">Booked by: <%= booking.user_id %></p>
+              <%= console %>
+            </div>
           </div>
       </div>
     <% end %>
+  </div>
 </div>
