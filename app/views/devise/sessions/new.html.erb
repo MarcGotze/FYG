@@ -1,8 +1,8 @@
 <div class="container">
-  <h2>Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs position-absolute top-50 start-50 translate-middle">
+      <h2>Log in</h2>
       <%# <%= f.input :username,
                   required: true,
                   autofocus: true,
@@ -14,7 +14,7 @@
       <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.label :role %>
+      <%# <%= f.label :role %>
       <%# <div class="form-control">
         <%= f.select :role, User::ROLE,
                     required: true,
@@ -22,12 +22,14 @@
                     input_html: { autocomplete: "role" }%>
       <%# </div> %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div class="d-flex align-items-center justify-content-around">
+        <div class="form-actions btn btn-warning">
+          <%= f.button :submit, "Log in" %>
+        </div>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
 
-    <div class="form-actions btn btn-warning">
-      <%= f.button :submit, "Log in" %>
-    </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>
