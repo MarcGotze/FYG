@@ -6,25 +6,16 @@
       <div class= "flex-description">
         <div class="description-show">
           <h2><%= @venue.name %></h2>
-            <p><%= @venue.address %></p>
-            <p><%= @venue.overview %></p>
+          <p><%= @venue.address %></p>
+          <p><%= @venue.overview %></p>
           <div class="flex-button">
-            <% if user_signed_in? && current_user.role == "owner"%>
+            <%= link_to "Book!", new_user_venue_booking_path(current_user, @venue), class: "btn btn-warning mb-5" %>
+            <% if @venue.owner == current_user %>
               <%= link_to "Edit", edit_user_venue_path(current_user), class: "btn btn-warning mb-5" %>
               <%= link_to "Delete", "/users/#{current_user.id}/venues/#{@venue.id}" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning mb-5" %>
             <% end %>
-            <div class="btn-container btn-book">
-              <%= link_to "Book!", new_user_venue_booking_path(current_user, @venue), class: "btn btn-warning mb-5" %>
-            </div>
           </div>
         </div>
-      </div>
-      <div class="btn-container">
-        <%= link_to "Book!", new_user_venue_booking_path(current_user, @venue), class: "btn btn-warning mb-5" %>
-        <% if @venue.owner == current_user %>
-          <%= link_to "Edit", edit_user_venue_path(current_user), class: "btn btn-warning mb-5" %>
-          <%= link_to "Delete", "/users/#{current_user.id}/venues/#{@venue.id}" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning mb-5" %>
-        <% end %>
       </div>
     </div>
 </div>
