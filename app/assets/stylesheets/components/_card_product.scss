@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
+  position: relative;
 }
 
 .card-product img {
@@ -36,6 +37,7 @@
 .cards-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -45,10 +47,17 @@
   // align-items: flex-start;
 }
 
-.card-info-avatar {
-  align-self: flex-end;
+#card-info-avatar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 30px;
+    position: absolute;
+    right: 8px;
+  }
 }
 
 #container-bookings {
-  margin: 100px;
+  margin: 50px;
 }

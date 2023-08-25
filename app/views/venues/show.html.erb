@@ -12,7 +12,7 @@
             <p><%= @venue.overview %></p>
         </div>
       </div>
-       <% if user_signed_in? && current_user.role == "owner"%>
+       <% if @venue.owner == current_user %>
        <%= link_to "Edit", edit_user_venue_path(current_user), class: "btn btn-warning mb-5" %>
        <%= link_to "Delete", "/users/#{current_user.id}/venues/#{@venue.id}" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning mb-5" %>
        <% end %>
